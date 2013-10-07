@@ -1,4 +1,13 @@
 game-collection
 ===============
 
-This is a demo app written in Flask and AngularJS.  It lists the top 500 games from all platforms and allows users to create their own private collection of games
+This is a demo AngularJS application.  It is a game catalogue that contains
+500 games taken from api.gamesradar.com.  Users can add/edit/remove games to his/her own library.
+
+## Installation
+
+Firstly, you need NodeJS
+
+To install the application just run the following:
+
+npm install
