@@ -8,11 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/bootstrap.css">
+        <link rel="stylesheet" href="bower_components/bootstrap-sass/bootstrap-responsive-2.3.2.css">
         <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.css">
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
@@ -27,16 +28,35 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <a class="brand" href="#">GameDB</a>
+        </div>
+    </div>
+
     <!-- Add your site or application content here -->
-    <div class="container" ng-controller="GameListCtrl">
-        <ul>
-            <li ng-repeat="game in games">
-                <span>{{ game.name.us }}</span>
-                <p>Updated: {{ game.updated_date|date:'longDate' }}</p>
-                <p>Platform: {{ game.platform.name }}</p>
-            </li>
-        </ul>
-        <p>Total number of games: {{ games.length }}</p>
+    <div class="container-fluid" ng-controller="GameListCtrl">
+        <div class="row-fluid">
+            <div class="span4">
+                <form class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label">Search:</label>
+                        <div class="controls">
+                            <input type="text" ng-model="query" class="span10" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="span8">
+                <ul class="games">
+                    <li ng-repeat="game in games|filter: query">
+                        <span>{{ game.name.us }}</span>
+                        <p>Updated: {{ game.updated_date|date:'longDate' }}</p>
+                        <p>Platform: {{ game.platform.name }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

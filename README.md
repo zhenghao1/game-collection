@@ -11,3 +11,4 @@ Firstly, you need NodeJS
 To install the application just run the following:
 
 npm install
+bower install

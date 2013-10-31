@@ -17,6 +17,6 @@ describe('Controller: GameListCtrl', function () {
   }));
 
   it('should attach a list of games to the scope', function () {
-    expect(scope.games.length).toBe(3);
+    expect(scope.games.length).toBe(5);
   });
 });
