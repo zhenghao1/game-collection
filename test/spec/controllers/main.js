@@ -19,4 +19,9 @@ describe('Controller: GameListCtrl', function () {
   it('should attach a list of games to the scope', function () {
     expect(scope.games.length).toBe(5);
   });
+
+  it('should set the default value of orderProp to name.us', function() {
+    expect(scope.orderProp).toBe('name.us');
+  });
+
 });

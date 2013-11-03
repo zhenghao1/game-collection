@@ -45,11 +45,20 @@
                             <input type="text" ng-model="query" class="span10" />
                         </div>
                     </div>
+                    <div class="control-group">
+                        <label class="control-label">Sort by:</label>
+                        <div class="controls">
+                            <select ng-model="orderProp" class="span10">
+                                <option value="name.us">Alphabetical</option>
+                                <option value="updated_date">Updated date</option>
+                            </select>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="span8">
                 <ul class="games">
-                    <li ng-repeat="game in games|filter: query">
+                    <li ng-repeat="game in games|filter: query|orderBy: orderProp">
                         <span>{{ game.name.us }}</span>
                         <p>Updated: {{ game.updated_date|date:'longDate' }}</p>
                         <p>Platform: {{ game.platform.name }}</p>

@@ -65,7 +65,7 @@ Ctrl.controller('GameListCtrl', function ($scope) {
                 "id": "5",
                 "name": "PS3"
             },
-            "updated_date": "2013-07-16T12:59:13.00+0000",
+            "updated_date": "1993-11-06T12:59:13.00+0000",
             "url": "http://www.gamesradar.com/ps3/lego-movie-game",
             "images": {
                 "thumbnail": "http://static.gamesradar.com/images/empty_01_logo.jpg"
@@ -81,11 +81,12 @@ Ctrl.controller('GameListCtrl', function ($scope) {
                 "id": "5",
                 "name": "PS3"
             },
-            "updated_date": "2013-07-16T12:59:13.00+0000",
+            "updated_date": "1994-03-16T12:59:13.00+0000",
             "url": "http://www.gamesradar.com/ps3/lego-movie-game",
             "images": {
                 "thumbnail": "http://static.gamesradar.com/images/empty_01_logo.jpg"
             }
         }
     ];
+    $scope.orderProp = "name.us";
 });
