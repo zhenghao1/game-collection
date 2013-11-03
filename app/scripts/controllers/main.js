@@ -2,10 +2,9 @@
 
 var Ctrl = angular.module('gameCollectionApp.controllers', []);
 
-Ctrl.controller('GameListCtrl',
-                ['$scope', '$http', function ($scope, $http) {
-    $scope.orderProp = "name.us";
-    $http.get('../../games.json', function(data) {
-        $scope.games = data;
+Ctrl.controller('GameListCtrl', ['$scope', '$http', function ($scope, $http) {
+    $http.get('http://localhost:6543/platform').success(function(data) {
+        $scope.platforms = data;
     });
+    $scope.orderProp = "name";
 }]);
